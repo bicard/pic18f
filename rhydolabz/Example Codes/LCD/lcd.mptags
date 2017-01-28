@@ -1,0 +1,28 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+!_TAG_REVISION_NAME	MCHPTags	//
+!_TAG_REVISION_VERSION	6.0.1	//
+COMMAND	E:\rhydoLabz_18f_asm\LCD\LCD.asm	44;"	l	line:44
+D1	E:\rhydoLabz_18f_asm\LCD\LCD.asm	68;"	l	line:68
+D2	E:\rhydoLabz_18f_asm\LCD\LCD.asm	65;"	l	line:65
+D3	E:\rhydoLabz_18f_asm\LCD\LCD.asm	81;"	l	line:81
+D4	E:\rhydoLabz_18f_asm\LCD\LCD.asm	78;"	l	line:78
+D5	E:\rhydoLabz_18f_asm\LCD\LCD.asm	94;"	l	line:94
+D6	E:\rhydoLabz_18f_asm\LCD\LCD.asm	91;"	l	line:91
+DELAY100MICRO	E:\rhydoLabz_18f_asm\LCD\LCD.asm	62;"	l	line:62
+DELAY15MS	E:\rhydoLabz_18f_asm\LCD\LCD.asm	75;"	l	line:75
+DELAY5MS	E:\rhydoLabz_18f_asm\LCD\LCD.asm	88;"	l	line:88
+DISPLAY	E:\rhydoLabz_18f_asm\LCD\LCD.asm	53;"	l	line:53
+GOTO	E:\rhydoLabz_18f_asm\LCD\LCD.asm	70;"	v	line:70
+GOTO	E:\rhydoLabz_18f_asm\LCD\LCD.asm	72;"	v	line:72
+GOTO	E:\rhydoLabz_18f_asm\LCD\LCD.asm	83;"	v	line:83
+GOTO	E:\rhydoLabz_18f_asm\LCD\LCD.asm	85;"	v	line:85
+GOTO	E:\rhydoLabz_18f_asm\LCD\LCD.asm	96;"	v	line:96
+GOTO	E:\rhydoLabz_18f_asm\LCD\LCD.asm	98;"	v	line:98
+START	E:\rhydoLabz_18f_asm\LCD\LCD.asm	9;"	l	line:9
+dCnt1	E:\rhydoLabz_18f_asm\LCD\LCD.asm	1;"	q	line:1
+dCnt2	E:\rhydoLabz_18f_asm\LCD\LCD.asm	2;"	q	line:2

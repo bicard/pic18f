@@ -1,0 +1,18 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+!_TAG_REVISION_NAME	MCHPTags	//
+!_TAG_REVISION_VERSION	6.0.1	//
+CONT_SCAN	E:\rhydoLabz_18f_asm\PULL_UP KEYS\pull_Ups.asm	31;"	l	line:31
+DELAY	E:\rhydoLabz_18f_asm\PULL_UP KEYS\pull_Ups.asm	71;"	l	line:71
+GOTO	E:\rhydoLabz_18f_asm\PULL_UP KEYS\pull_Ups.asm	78;"	v	line:78
+GOTO	E:\rhydoLabz_18f_asm\PULL_UP KEYS\pull_Ups.asm	80;"	v	line:80
+KEYCHECK	E:\rhydoLabz_18f_asm\PULL_UP KEYS\pull_Ups.asm	51;"	l	line:51
+KEY_SCN	E:\rhydoLabz_18f_asm\PULL_UP KEYS\pull_Ups.asm	40;"	l	line:40
+START	E:\rhydoLabz_18f_asm\PULL_UP KEYS\pull_Ups.asm	11;"	l	line:11
+TEMP	E:\rhydoLabz_18f_asm\PULL_UP KEYS\pull_Ups.asm	3;"	q	line:3
+dCnt1	E:\rhydoLabz_18f_asm\PULL_UP KEYS\pull_Ups.asm	1;"	q	line:1
+dCnt2	E:\rhydoLabz_18f_asm\PULL_UP KEYS\pull_Ups.asm	2;"	q	line:2

@@ -1,0 +1,17 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+!_TAG_REVISION_NAME	MCHPTags	//
+!_TAG_REVISION_VERSION	6.0.1	//
+DELAY	E:\rhydoLabz_18f_asm\I2C\EEPROM\I2C.asm	128;"	l	line:128
+GOTO	E:\rhydoLabz_18f_asm\I2C\EEPROM\I2C.asm	135;"	v	line:135
+GOTO	E:\rhydoLabz_18f_asm\I2C\EEPROM\I2C.asm	137;"	v	line:137
+I2CSTART	E:\rhydoLabz_18f_asm\I2C\EEPROM\I2C.asm	105;"	l	line:105
+I2CSTOP	E:\rhydoLabz_18f_asm\I2C\EEPROM\I2C.asm	112;"	l	line:112
+START	E:\rhydoLabz_18f_asm\I2C\EEPROM\I2C.asm	11;"	l	line:11
+VERIFY	E:\rhydoLabz_18f_asm\I2C\EEPROM\I2C.asm	119;"	l	line:119
+dCnt1	E:\rhydoLabz_18f_asm\I2C\EEPROM\I2C.asm	2;"	q	line:2
+dCnt2	E:\rhydoLabz_18f_asm\I2C\EEPROM\I2C.asm	3;"	q	line:3

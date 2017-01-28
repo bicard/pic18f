@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Solaris (vers 6 November 2007), see www.w3.org" />
+
+  <title>Microchip PIC18F Instruction Set</title>
+  <style type="text/css">
+	body {
+		font-family: Arial, Helvetica, sans-serif ;
+	}
+	p {
+		font-size: 10pt ;
+		text-align: center ;
+	}
+  </style>
+</head>
+<body>
+<h1>PIC18Fxxx Instruction Set</h1>
+
+<h2>Byte-oriented File Register Operations</h2>
+
+<ul>
+  <li><a href="ADDWF.html"><strong>ADDWF</strong> &mdash;
+     Add WREG to f</a></li>
+  <li><a href="ADDWFC.html"><strong>ADDWFC</strong> &mdash;
+     Add WREG and Carry bit to f</a></li>
+  <li><a href="ANDWF.html"><strong>ANDWF</strong> &mdash;
+     AND WREG with f</a></li>
+  <li><a href="CLRF.html"><strong>CLRF</strong> &mdash;
+     Clear f</a></li>
+  <li><a href="COMF.html"><strong>COMF</strong> &mdash;
+     Complement f</a></li>
+  <li><a href="CPFSEQ.html"><strong>CPFSEQ</strong> &mdash;
+     Compare f with WREG, skip =</a></li>
+  <li><a href="CPFSGT.html"><strong>CPFSGT</strong> &mdash;
+     Compare f with WREG, skip if &gt;</a></li>
+  <li><a href="CPFSLT.html"><strong>CPFSLT</strong> &mdash;
+     Compare f with WREG, skip if &lt;</a></li>
+  <li><a href="DECF.html"><strong>DECF</strong> &mdash;
+     Decrement f</a></li>
+  <li><a href="DECFSZ.html"><strong>DECFSZ</strong> &mdash;
+     Decrement f, Skip if 0</a></li>
+  <li><a href="DCFSNZ.html"><strong>DCFSNZ</strong> &mdash;
+     Decrement f, Skip if Not 0</a></li>
+  <li><a href="INCF.html"><strong>INCF</strong> &mdash;
+     Increment f</a></li>
+  <li><a href="INCFSZ.html"><strong>INCFSZ</strong> &mdash;
+     Increment f, Skip if 0</a></li>
+  <li><a href="INFSNZ.html"><strong>INFSNZ</strong> &mdash;
+     Increment f, Skip if Not 0</a></li>
+  <li><a href="IORWF.html"><strong>IORWF</strong> &mdash;
+     Inclusive OR WREG with f</a></li>
+  <li><a href="MOVF.html"><strong>MOVF</strong> &mdash;
+     Move f</a></li>
+  <li><a href="MOVFF.html"><strong>MOVFF</strong> &mdash;
+     Move fs (source) to fd (destination)</a></li>
+  <li><a href="MOVWF.html"><strong>MOVWF</strong> &mdash;
+     Move WREG to f</a></li>
+  <li><a href="MULWF.html"><strong>MULWF</strong> &mdash;
+     Multiply WREG with f</a></li>
+  <li><a href="NEGF.html"><strong>NEGF</strong> &mdash;
+     Negate f</a></li>
+  <li><a href="RLCF.html"><strong>RLCF</strong> &mdash;
+     Rotate Left f through Carry</a></li>
+  <li><a href="RLNCF.html"><strong>RLNCF</strong> &mdash;
+     Rotate Left f (No Carry)</a></li>
+  <li><a href="RRCF.html"><strong>RRCF</strong> &mdash;
+     Rotate Right f through Carry</a></li>
+  <li><a href="RRNCF.html"><strong>RRNCF</strong> &mdash;
+     Rotate Right f (No Carry)</a></li>
+  <li><a href="SETF.html"><strong>SETF</strong> &mdash;
+     Set f</a></li>
+  <li><a href="SUBFWB.html"><strong>SUBFWB</strong> &mdash;
+     Subtract f from WREG with borrow</a></li>
+  <li><a href="SUBWF.html"><strong>SUBWF</strong> &mdash;
+     Subtract WREG from f</a></li>
+  <li><a href="SUBWFB.html"><strong>SUBWFB</strong> &mdash;
+     Subtract WREG from f with borrow</a></li>
+  <li><a href="SWAPF.html"><strong>SWAPF</strong> &mdash;
+     Swap nibbles in f</a></li>
+  <li><a href="TSTFSZ.html"><strong>TSTFSZ</strong> &mdash;
+     Test f, skip if 0</a></li>
+  <li><a href="XORWF.html"><strong>XORWF</strong> &mdash;
+     Exclusive OR WREG with f</a></li>
+</ul>
+
+<h2>Bit-oriented File Register Operations</h2>
+
+<ul>
+  <li><a href="BCF.html"><strong>BCF</strong> &mdash;
+     Bit Clear f</a></li>
+  <li><a href="BSF.html"><strong>BSF</strong> &mdash;
+     Bit Set f</a></li>
+  <li><a href="BTFSC.html"><strong>BTFSC</strong> &mdash;
+     Bit Test f, Skip if Clear</a></li>
+  <li><a href="BTFSS.html"><strong>BTFSS</strong> &mdash;
+     Bit Test f, Skip if Set</a></li>
+  <li><a href="BTG.html"><strong>BTG</strong> &mdash;
+     Bit Toggle f</a></li>
+</ul>
+
+<h2>Control Operations</h2>
+
+<ul>
+  <li><a href="BC.html"><strong>BC</strong> &mdash;
+     Branch if Carry</a></li>
+  <li><a href="BN.html"><strong>BN</strong> &mdash;
+     Branch if Negative</a></li>
+  <li><a href="BNC.html"><strong>BNC</strong> &mdash;
+     Branch if Not Carry</a></li>
+  <li><a href="BNN.html"><strong>BNN</strong> &mdash;
+     Branch if Not Negative</a></li>
+  <li><a href="BNOV.html"><strong>BNOV</strong> &mdash;
+     Branch if Not Overflow</a></li>
+  <li><a href="BNZ.html"><strong>BNZ</strong> &mdash;
+     Branch if Not Zero</a></li>
+  <li><a href="BOV.html"><strong>BOV</strong> &mdash;
+     Branch if Overflow</a></li>
+  <li><a href="BRA.html"><strong>BRA</strong> &mdash;
+     Branch Unconditionally</a></li>
+  <li><a href="BZ.html"><strong>BZ</strong> &mdash;
+     Branch if Zero</a></li>
+  <li><a href="CALL.html"><strong>CALL</strong> &mdash;
+     Call subroutine</a></li>
+  <li><a href="CLRWDT.html"><strong>CLRWDT</strong> &mdash;
+     Clear Watchdog Timer</a></li>
+  <li><a href="DAW.html"><strong>DAW</strong> &mdash;
+     Decimal Adjust WREG</a></li>
+  <li><a href="GOTO.html"><strong>GOTO</strong> &mdash;
+     Go to address</a></li>
+  <li><a href="NOP.html"><strong>NOP</strong> &mdash;
+     No Operation</a></li>
+  <li><a href="POP.html"><strong>POP</strong> &mdash;
+     Pop top of return stack (TOS)</a></li>
+  <li><a href="PUSH.html"><strong>PUSH</strong> &mdash;
+     Push top of return stack (TOS)</a></li>
+  <li><a href="RCALL.html"><strong>RCALL</strong> &mdash;
+     Relative Call</a></li>
+  <li><a href="RESET.html"><strong>RESET</strong> &mdash;
+     Software device RESET</a></li>
+  <li><a href="RETFIE.html"><strong>RETFIE</strong> &mdash;
+     Return from interrupt enable</a></li>
+  <li><a href="RETLW.html"><strong>RETLW</strong> &mdash;
+     Return with literal in WREG</a></li>
+  <li><a href="RETURN.html"><strong>RETURN</strong> &mdash;
+     Return from Subroutine</a></li>
+  <li><a href="SLEEP.html"><strong>SLEEP</strong> &mdash;
+     Go into Standby mode</a></li>
+</ul>
+
+<h2>Literal Operations</h2>
+
+<ul>
+  <li><a href="ADDLW.html"><strong>ADDLW</strong> &mdash;
+     Add literal and WREG</a></li>
+  <li><a href="ANDLW.html"><strong>ANDLW</strong> &mdash;
+     AND literal with WREG</a></li>
+  <li><a href="IORLW.html"><strong>IORLW</strong> &mdash;
+     Inclusive OR literal with WREG</a></li>
+  <li><a href="LFSR.html"><strong>LFSR</strong> &mdash;
+     Move literal to FSRx</a></li>
+  <li><a href="MOVLB.html"><strong>MOVLB</strong> &mdash;
+     Move literal to BSR&lt;3:0&gt;</a></li>
+  <li><a href="MOVLW.html"><strong>MOVLW</strong> &mdash;
+     Move literal to WREG</a></li>
+  <li><a href="MULLW.html"><strong>MULLW</strong> &mdash;
+     Multiply literal with WREG</a></li>
+  <li><a href="RETLW.html"><strong>RETLW</strong> &mdash;
+     Return with literal in WREG</a></li>
+  <li><a href="SUBLW.html"><strong>SUBLW</strong> &mdash;
+     Subtract WREG from literal</a></li>
+  <li><a href="XORLW.html"><strong>XORLW</strong> &mdash;
+     Exclusive OR literal with WREG</a></li>
+</ul>
+
+<h2>Data Memory &amp; Program Memory Operations</h2>
+
+<ul>
+  <li><a href="TBLRD.html"><strong>TBLRD*</strong> &mdash;
+     Table Read</a></li>
+  <li><a href="TBLRD.html"><strong>TBLRD*+</strong> &mdash;
+     Table Read with post-increment</a></li>
+  <li><a href="TBLRD.html"><strong>TBLRD*-</strong> &mdash;
+     Table Read with post-decrement</a></li>
+  <li><a href="TBLRD.html"><strong>TBLRD+*</strong> &mdash;
+     Table Read with pre-increment</a></li>
+  <li><a href="TBLWT.html"><strong>TBLWT*</strong> &mdash;
+     Table Write</a></li>
+  <li><a href="TBLWT.html"><strong>TBLWT*+</strong> &mdash;
+     Table Write with post-increment</a></li>
+  <li><a href="TBLWT.html"><strong>TBLWT*-</strong> &mdash;
+     Table Write with post-decrement</a></li>
+  <li><a href="TBLWT.html"><strong>TBLWT+*</strong> &mdash;
+     Table Write with pre-increment</a></li>
+</ul>
+
+</body>
+</html>

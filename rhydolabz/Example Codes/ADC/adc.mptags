@@ -1,0 +1,28 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+!_TAG_REVISION_NAME	MCHPTags	//
+!_TAG_REVISION_VERSION	6.0.1	//
+AGAIN	E:\rhydoLabz_18f_asm\ADC\adc.asm	21;"	l	line:21
+CHKVALUE	E:\rhydoLabz_18f_asm\ADC\adc.asm	52;"	l	line:52
+CONVCHK	E:\rhydoLabz_18f_asm\ADC\adc.asm	26;"	l	line:26
+DELAY	E:\rhydoLabz_18f_asm\ADC\adc.asm	106;"	l	line:106
+ENABLE	E:\rhydoLabz_18f_asm\ADC\adc.asm	7;"	q	line:7
+GOTO	E:\rhydoLabz_18f_asm\ADC\adc.asm	113;"	v	line:113
+GOTO	E:\rhydoLabz_18f_asm\ADC\adc.asm	115;"	v	line:115
+LCDCOMMAND	E:\rhydoLabz_18f_asm\ADC\adc.asm	3;"	q	line:3
+LCDDATA	E:\rhydoLabz_18f_asm\ADC\adc.asm	4;"	q	line:4
+LCDINIT	E:\rhydoLabz_18f_asm\ADC\adc.asm	71;"	l	line:71
+RS	E:\rhydoLabz_18f_asm\ADC\adc.asm	8;"	q	line:8
+RW	E:\rhydoLabz_18f_asm\ADC\adc.asm	6;"	q	line:6
+SNDCOMMAND	E:\rhydoLabz_18f_asm\ADC\adc.asm	85;"	l	line:85
+SNDDATA	E:\rhydoLabz_18f_asm\ADC\adc.asm	95;"	l	line:95
+START	E:\rhydoLabz_18f_asm\ADC\adc.asm	17;"	l	line:17
+VAL	E:\rhydoLabz_18f_asm\ADC\adc.asm	5;"	q	line:5
+VALATOF	E:\rhydoLabz_18f_asm\ADC\adc.asm	59;"	l	line:59
+VALZTON	E:\rhydoLabz_18f_asm\ADC\adc.asm	66;"	l	line:66
+dCnt1	E:\rhydoLabz_18f_asm\ADC\adc.asm	9;"	q	line:9
+dCnt2	E:\rhydoLabz_18f_asm\ADC\adc.asm	10;"	q	line:10
