@@ -1,0 +1,181 @@
+Disassembly Listing for i2c
+Generated From:
+C:/Users/522832/Desktop/i2c/dist/default/production/i2c.production.cof
+26 Sep, 2020 4:53:50 PM
+
+---  C:/Users/522832/Desktop/i2c/i2c.asm  ---------------------------------------------------------------
+                                                  1:     
+                                                  2:     ;/* Microchip MPLAB Version 7.4  			   	  */
+                                                  3:     ;/* PIC C - HI-TECH PICC Compiler Version 8.05PL2 */
+                                                  4:     ;
+                                                  5:     ;/*
+                                                  6:     ;*************************************************************************************************
+                                                  7:     ;*    						       I2C    										                 *
+                                                  8:     ;*    		          																			 *
+                                                  9:     ;*************************************************************************************************
+                                                  10:    ;																								 *
+                                                  11:    ;*  Description  : Source code TO READ AND WRITE EEPROM using I2C PROTOCOL
+                                                  12:    ;  																						         *
+                                                  13:    ;*************************************************************************************************
+                                                  14:    
+                                                  15:    dCnt1 equ 30H		;label 30H address as dCnt1
+                                                  16:    dCnt2 equ 31H		;label 31H address as dCnt2
+                                                  17:    
+                                                  18:    	   		INCLUDE"P18F4520.INC"	;include PIC18F4580 definitions
+                                                  19:    			ORG 0000H			;reset vector location
+0000  6AFA     CLRF PCLATH, ACCESS                20:    		    CLRF PCLATH			;clearing program counter higher bits
+0002  EF18     GOTO 0x30                          21:    		    GOTO START			;jump to start up location defined at 30H
+0004  F000     NOP
+                                                  22:    			ORG 0030H
+                                                  23:    
+                                                  24:    START					;start of program
+                                                  25:    
+                                                  26:    		;	CLRF TRISC			;make PORTC pins as output
+                                                  27:    		;	BSF TRISC,4			;make serial I/O pin as input
+                                                  28:    
+                                                  29:    			;---USART INITIALISATION---;
+                                                  30:    
+0030  8AAC     BSF TXSTA, 5, ACCESS               31:    			BSF TXSTA,TXEN		;transmission enable
+0032  98AC     BCF TXSTA, 4, ACCESS               32:    			BCF TXSTA,SYNC		;asynchronous mode select
+0034  84AC     BSF TXSTA, 2, ACCESS               33:    			BSF TXSTA,BRGH		;switch to high speed baud rate
+0036  0E81     MOVLW 0x81                         34:    			MOVLW 0X81			;
+0038  6EAF     MOVWF SPBRG, ACCESS                35:    			MOVWF SPBRG			;value loaded for baud-rate,9600
+003A  8EAB     BSF RCSTA, 7, ACCESS               36:    			BSF RCSTA,SPEN		;serial port enable
+                                                  37:    
+                                                  38:    			;----I2C INITIALISATION----;
+                                                  39:    
+                                                  40:    
+003C  8EC7     BSF SSPSTAT, 7, ACCESS             41:    			BSF SSPSTAT,7		;input data sampling done at the end of data output time
+003E  9CC7     BCF SSPSTAT, 6, ACCESS             42:    			BCF SSPSTAT,6		;slew rate control disabled for standard speed mode(100kHz)
+0040  0E31     MOVLW 0x31                         43:    			MOVLW D'49'
+0042  6EC8     MOVWF SSPADD, ACCESS               44:    			MOVWF SSPADD		;baud rate value for 100kHz
+0044  8AC6     BSF SSPCON1, 5, ACCESS             45:    			BSF SSPCON1,SSPEN	;enabls serial port,and
+                                                  46:    								;configures SDA and SCL pins as the source of serial port pins
+0046  86C6     BSF SSPCON1, 3, ACCESS             47:    			BSF SSPCON1,SSPM3	;
+0048  94C6     BCF SSPCON1, 2, ACCESS             48:    			BCF SSPCON1,SSPM2	;
+004A  92C6     BCF SSPCON1, 1, ACCESS             49:    			BCF SSPCON1,SSPM1	;
+004C  90C6     BCF SSPCON1, 0, ACCESS             50:    			BCF SSPCON1,SSPM0	;i2c Master mode, clock=Fosc/(4*(SSPADD+1))
+                                                  51:    								;clock = 100kHz, Fosc = 20Mhz
+                                                  52:    
+                                                  53:    			;---------I2C WRITE--------;
+                                                  54:    
+                                                  55:    
+004E  EC57     CALL 0xAE, 0                       56:    			CALL I2CSTART		;call for i2c START
+0050  F000     NOP
+                                                  57:    
+                                                  58:    
+                                                  59:    
+0052  0EA0     MOVLW 0xA0                         60:    			MOVLW 0XA0			;writing Device Address with write enable
+0054  EC61     CALL 0xC2, 0                       61:    			CALL VERIFY			;call for write verification
+0056  F000     NOP
+                                                  62:    
+0058  0E01     MOVLW 0x1                          63:    			MOVLW 0X01			;writing Location Address
+005A  EC61     CALL 0xC2, 0                       64:    			CALL VERIFY			;call for write verification
+005C  F000     NOP
+                                                  65:    
+005E  0E56     MOVLW 0x56                         66:    			MOVLW 'V'			;Data to be written(ASCII)to device
+0060  EC61     CALL 0xC2, 0                       67:    			CALL VERIFY			;call for write verification
+0062  F000     NOP
+                                                  68:    
+0064  EC5C     CALL 0xB8, 0                       69:    			CALL I2CSTOP			;call for i2c STOP
+0066  F000     NOP
+                                                  70:    
+                                                  71:    			;------------------------------------------------------------
+0068  EC67     CALL 0xCE, 0                       72:    			CALL DELAY			;delay before initiating an i2c read
+006A  F000     NOP
+006C  EC67     CALL 0xCE, 0                       73:    			CALL DELAY			;delay before initiating an i2c read
+006E  F000     NOP
+                                                  74:    			;------------------------------------------------------------
+                                                  75:    
+                                                  76:    			;---------DUMMY WRITE-------;
+                                                  77:    
+0070  EC57     CALL 0xAE, 0                       78:    			CALL I2CSTART		;call for i2c START
+0072  F000     NOP
+                                                  79:    
+0074  0EA0     MOVLW 0xA0                         80:    			MOVLW 0XA0			;writing Device Address with write enable
+0076  EC61     CALL 0xC2, 0                       81:    			CALL VERIFY			;call for write verification
+0078  F000     NOP
+                                                  82:    
+007A  0E01     MOVLW 0x1                          83:    			MOVLW 0X01			;writing Location Address
+007C  EC61     CALL 0xC2, 0                       84:    			CALL VERIFY			;call for write verification
+007E  F000     NOP
+                                                  85:    
+0080  EC5C     CALL 0xB8, 0                       86:    			CALL I2CSTOP			;call for i2c STOP
+0082  F000     NOP
+                                                  87:    
+                                                  88:    			;------------------------------------------------------------
+0084  EC67     CALL 0xCE, 0                       89:    			CALL DELAY			;delay before initiating an i2c read
+0086  F000     NOP
+                                                  90:    			;------------------------------------------------------------
+                                                  91:    
+                                                  92:    			;----------I2C READ---------;
+                                                  93:    
+0088  EC57     CALL 0xAE, 0                       94:    			CALL I2CSTART		;call for i2c START
+008A  F000     NOP
+                                                  95:    
+008C  0EA1     MOVLW 0xA1                         96:    			MOVLW 0XA1			;writing Device Address with read enable
+008E  EC61     CALL 0xC2, 0                       97:    			CALL VERIFY			;call for write verification
+0090  F000     NOP
+                                                  98:    
+0092  86C5     BSF SSPCON2, 3, ACCESS             99:    			BSF SSPCON2,RCEN	;synchronous reception enabled
+0094  A69E     BTFSS PIR1, 3, ACCESS              100:   SSPIF_CHK   BTFSS PIR1,SSPIF	;wait for data to be read(check SSP interrupt flag)
+0096  D7FE     BRA 0x94                           101:   			BRA SSPIF_CHK		;skip if set
+0098  969E     BCF PIR1, 3, ACCESS                102:   			BCF PIR1,SSPIF		;clear flag bit
+                                                  103:   
+009A  88C5     BSF SSPCON2, 4, ACCESS             104:   			BSF SSPCON2,ACKEN	;Master acknowledge enable
+009C  8AC5     BSF SSPCON2, 5, ACCESS             105:   			BSF SSPCON2,ACKDT	;send active low as acknowledgement from PIC to EEPROM
+                                                  106:   								;ie, from master to slave
+009E  50C9     MOVF SSPBUF, W, ACCESS             107:   			MOVF SSPBUF,0		;move the received data to working register
+00A0  6EAD     MOVWF TXREG, ACCESS                108:   			MOVWF TXREG
+00A2  A2AC     BTFSS TXSTA, 1, ACCESS             109:   TRMT_CHK    BTFSS TXSTA,TRMT
+00A4  D7FE     BRA 0xA2                           110:   			BRA TRMT_CHK
+                                                  111:   
+00A6  EC5C     CALL 0xB8, 0                       112:   			CALL I2CSTOP		;call for i2c STOP
+00A8  F000     NOP
+                                                  113:   
+00AA  EF55     GOTO 0xAA                          114:   			GOTO $
+00AC  F000     NOP
+                                                  115:   
+                                                  116:   			;--------subroutines--------;
+                                                  117:   
+                                                  118:   I2CSTART
+00AE  80C5     BSF SSPCON2, 0, ACCESS             119:   				BSF SSPCON2,SEN		;START Condition Enable Bit
+00B0  A69E     BTFSS PIR1, 3, ACCESS              120:   	START_CHK   BTFSS PIR1,SSPIF	;wait for START enable(check SSP interrupt flag)
+00B2  D7FE     BRA 0xB0                           121:   				BRA START_CHK		;skip if set
+00B4  969E     BCF PIR1, 3, ACCESS                122:   				BCF PIR1,SSPIF		;clear flag bit
+00B6  0012     RETURN 0                           123:   				RETURN				;return from subroutine
+                                                  124:   
+                                                  125:   I2CSTOP
+00B8  84C5     BSF SSPCON2, 2, ACCESS             126:   				BSF SSPCON2,PEN		;STOP Condition Enable Bit
+00BA  A69E     BTFSS PIR1, 3, ACCESS              127:   	STOP_CHK    BTFSS PIR1,SSPIF	;wait for STOP condition(check SSP interrupt flag)
+00BC  D7FE     BRA 0xBA                           128:   				BRA STOP_CHK		;skip if set
+00BE  969E     BCF PIR1, 3, ACCESS                129:   				BCF PIR1,SSPIF		;clear flag bit
+00C0  0012     RETURN 0                           130:   				RETURN				;return from subroutine
+                                                  131:   
+                                                  132:   VERIFY:
+00C2  6EC9     MOVWF SSPBUF, ACCESS               133:   				MOVWF SSPBUF		;loading data to SSPBUF for i2c write
+00C4  A69E     BTFSS PIR1, 3, ACCESS              134:       VRFY_CHK    BTFSS PIR1,SSPIF	;wait for data write(check SSP interrupt flag)
+00C6  D7FE     BRA 0xC4                           135:   				BRA VRFY_CHK    	;skip if set
+00C8  969E     BCF PIR1, 3, ACCESS                136:   				BCF PIR1,SSPIF		;clear flag bit
+                                                  137:   				;BSF SSPCON2,ACKSTAT	;set back for ACK to initial mode once received
+00CA  50C9     MOVF SSPBUF, W, ACCESS             138:   				MOVF SSPBUF,0		;loading working register with SSPBUF data
+00CC  0012     RETURN 0                           139:   				RETURN				;return from subroutine
+                                                  140:   
+                                                  141:   DELAY								;delay sub-routine
+00CE  0EFF     MOVLW 0xFF                         142:   				MOVLW 0XFF
+00D0  6E30     MOVWF 0x30, ACCESS                 143:   				MOVWF dCnt1			;load 0xff to dCnt1
+                                                  144:   			D2
+00D2  6E31     MOVWF 0x31, ACCESS                 145:   				MOVWF dCnt2			;load 0xff to dCnt2
+                                                  146:   			D1
+00D4  2E31     DECFSZ 0x31, F, ACCESS             147:   				DECFSZ dCnt2,1		;decrement dCnt2 and skip if zero
+00D6  EF6A     GOTO 0xD4                          148:   				GOTO D1				;jump to label D1
+00D8  F000     NOP
+00DA  2E30     DECFSZ 0x30, F, ACCESS             149:   				DECFSZ dCnt1,1		;decrement dCnt1 and skip if zero
+00DC  EF69     GOTO 0xD2                          150:   				GOTO D2				;jump to label D2
+00DE  F000     NOP
+00E0  0012     RETURN 0                           151:   				RETURN				;return from delay sub-routine
+                                                  152:   
+                                                  153:   				END					;end of program
+                                                  154:   
+                                                  155:   
+                                                  156:   
